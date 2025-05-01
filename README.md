@@ -1,39 +1,35 @@
 # Search Engine
 
-A simple search engine implementation that performs document indexing and searching using an inverted index data structure.
+A C++ implementation of a search engine that uses an inverted index for efficient text search across multiple documents.
 
 ## Features
 
-- Document indexing using inverted index
-- Search functionality with relevance ranking
-- Support for multiple search queries
-- Top-K results retrieval
-- Relevance score normalization
+- Inverted index for fast text search
+- Configurable through JSON files
+- Document relevance ranking
+- Support for multi-word queries
+- Unit tests using Google Test framework
 
-## Build
+## Project Structure
+search_engine/ ├── src/ # Source files │ ├── InvertedIndex.cpp # Inverted index implementation │ ├── SearchServer.cpp # Search server implementation │ ├── ConverterJSON.cpp # JSON handling │ └── Main.cpp # Entry point ├── include/ # Header files ├── tests/ # Test files ├── resources/ # Text documents for searching └── config/ # Configuration files ├── config.json # Main configuration └── request.json # Search queries
 
-To build the project:
+
+## Dependencies
+
+- C++17 or higher
+- CMake 3.10 or higher
+- nlohmann/json library (automatically fetched by CMake)
+- Google Test framework (automatically fetched by CMake)
+
+## Building the Project
 
 ```bash
+# Create build directory
 mkdir build
 cd build
+
+# Configure CMake
 cmake ..
+
+# Build the project
 cmake --build .
-```
-
-## Testing
-
-Run the tests:
-
-```bash
-./build/tests/search_engine_tests
-```
-
-## Usage
-
-1. Prepare your configuration in `config.json`
-2. Run the search engine:
-```bash
-./build/src/search_engine
-```
-3. Results will be saved to `answers.json`
