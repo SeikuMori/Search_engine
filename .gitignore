@@ -1,13 +1,11 @@
 # Build directory
 build/
 
-# IDE specific files
+# VS Code settings
 .vscode/
-.idea/
-*.user
-*.suo
-*.userprefs
-*.sln.docstates
+
+# Prerequisites
+*.d
 
 # Compiled Object files
 *.slo
@@ -34,6 +32,20 @@ build/
 *.exe
 *.out
 *.app
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# IDE specific files
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
 
 # Generated files
 answers.json

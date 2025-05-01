@@ -48,22 +48,21 @@ std::vector<std::vector<RelativeIndex>> SearchServer::search(const std::vector<s
             ranked_docs.push_back({doc_id, normalized_rank});
         }
 
+        // Создаем лямбда-функцию для сравнения
+        auto compareResults = [](const RelativeIndex& a, const RelativeIndex& b) {
+            return (a.rank > b.rank) || 
+                   (a.rank == b.rank && a.doc_id < b.doc_id);
+        };
+
         // Частичная сортировка - только для TOP-K результатов
         if (ranked_docs.size() > MAX_RESULTS) {
             std::partial_sort(ranked_docs.begin(), 
                             ranked_docs.begin() + MAX_RESULTS,
                             ranked_docs.end(),
-                            [](const RelativeIndex& a, const RelativeIndex& b) {
-                                return (a.rank > b.rank) || 
-                                       (a.rank == b.rank && a.doc_id < b.doc_id);
-                            });
+                            compareResults);
             ranked_docs.resize(MAX_RESULTS);
         } else {
-            std::sort(ranked_docs.begin(), ranked_docs.end(),
-                     [](const RelativeIndex& a, const RelativeIndex& b) {
-                         return (a.rank > b.rank) || 
-                                (a.rank == b.rank && a.doc_id < b.doc_id);
-                     });
+            std::sort(ranked_docs.begin(), ranked_docs.end(), compareResults);
         }
 
         result.push_back(std::move(ranked_docs));

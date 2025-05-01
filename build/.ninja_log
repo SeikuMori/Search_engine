@@ -32,3 +32,9 @@
 1781	2637	7654616397760388	tests/search_engine_tests.exe	37bcc43cb151e9fb
 1781	2637	7654616397760388	tests/search_engine_tests[1]_tests.cmake	37bcc43cb151e9fb
 1781	2637	7654616397760388	C:/Users/OneHeart/.vscode/projects/search_engine/build/tests/search_engine_tests[1]_tests.cmake	37bcc43cb151e9fb
+70	2580	7677813192164525	src/CMakeFiles/search_engine.dir/SearchServer.cpp.obj	2af83ba40e853c0e
+97	2587	7677813192430782	tests/CMakeFiles/search_engine_tests.dir/__/src/SearchServer.cpp.obj	df9d7492005ff3b4
+2580	3180	7677813217266233	src/search_engine.exe	6203601320b0e064
+2587	3779	7677813229179928	tests/search_engine_tests.exe	37bcc43cb151e9fb
+2587	3779	7677813229179928	tests/search_engine_tests[1]_tests.cmake	37bcc43cb151e9fb
+2587	3779	7677813229179928	C:/Users/OneHeart/.vscode/projects/search_engine/build/tests/search_engine_tests[1]_tests.cmake	37bcc43cb151e9fb
